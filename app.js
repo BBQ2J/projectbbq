@@ -46,7 +46,7 @@ hbs.registerPartials("./views/partials");
 
 
 // default value for title local
-app.locals.title = 'IronTumblr';
+app.locals.title = 'projectBBQ';
 
 
 
@@ -67,9 +67,5 @@ app.use((req, res, next) => {
 
 const index = require('./routes/index');
 app.use('/', index);
-
-const authRoutes = require('./routes/auth');
-app.use('/auth', authRoutes);
-      
 
 module.exports = app;

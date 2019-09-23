@@ -29,7 +29,7 @@ const userSchema = new Schema(
      },
     location: String,
     bio: String,
-    interests: {type: String},
+    // interests: {type: String},
     validationCode: { type: String },
     active: { type: Boolean, default: false }
   },
