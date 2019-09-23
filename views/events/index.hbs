@@ -1,0 +1,14 @@
+{{#each events}}
+{{!-- {{> eventPartial}} --}}
+<div class="event">
+<h2 class="event-title">{{this.title}}</h2>
+<p>Created by: {{this.creatorId.username}}</p>
+<p>{{content}}</p>
+<img src="{{picPath}}" alt="{{picName}}">
+<br>
+<p>Comments: {{this.comments.length}}</p>
+<a href="/events/{{this.id}}">Comment</a>
+</div>
+{{else}}
+<p>There are no events at this moment 🤦🏻‍♂️</p>
+{{/each}}

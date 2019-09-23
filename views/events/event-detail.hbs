@@ -1,0 +1,15 @@
+{{> eventPartial event=event}}
+
+{{#each event.comments}}
+  <div class="comment">
+    <p>Author: {{this.authorId.username}}</p>
+    <p>Content: {{this.content}}</p>
+  </div>
+{{/each}}
+<form action="/events/{{event.id}}/newComment" method="POST" enctype="multipart/form-data">
+  <textarea for="content" cols="30" rows="10" name="content">Content</textarea>
+  <input type="file" name="picName" id="picName">
+  <button>Create event</button>
+</form>
+
+<div class="error-message"></div>

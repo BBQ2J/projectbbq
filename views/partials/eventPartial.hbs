@@ -1,0 +1,13 @@
+{{#with event}}
+
+<div class="event">
+<h2 class="event-title">{{this.title}}</h2>
+<p>Created by: {{this.creatorId.username}}</p>
+<p>{{content}}</p>
+<img src="{{picPath}}" alt="{{picName}}">
+<br>
+<p>Comments: {{comments.length}}</p>
+
+</div>
+
+ {{/with}}
