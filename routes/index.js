@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
   res.render("index");
 });
-router.use("/posts", require("./post.routes"));
+router.use("/events", require("./event.routes"));
 
 router.use("/profile", require("./profile"));
 

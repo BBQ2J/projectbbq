@@ -51,7 +51,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
-  const { username, password, email, bio, location } = req.body;
+  const { name, surname, username, password, email, bio, location } = req.body;
   const { originalname, url } = req.file;
 
   if (username === "" || password === "" || email === "") {
@@ -74,6 +74,8 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
       username,
       password: hashPass,
       email,
+      name,
+      surname,
       photo: {
         url,
         name: originalname
@@ -82,7 +84,7 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
       location,
       validationCode
     });
-
+    console.log(newUser)
     newUser.save().then(newUser => {
       transporter
         .sendMail({

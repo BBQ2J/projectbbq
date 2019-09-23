@@ -1,9 +1,14 @@
 <div class="profile">
-<h2 class="post-title">{{user.id}}</h2>
-<p>{{user.username}}</p>
-<p>{{content}}</p>
-<img src="{{picPath}}" alt="{{picName}}">
-<br>
-<p>Comments: {{this.comments.length}}</p>
-<a href="/posts/{{this.id}}">Comment</a>
+<h2 class="post-title">Your profile</h2>
+<p>Name: {{user.name}}</p> <button>Edit</button>
+<p>Surname: {{user.surname}}</p> <button>Edit</button>
+<p>Username: {{user.username}}</p> <button>Edit</button>
+<p>Location: {{user.location}}</p><button>Edit</button>
+<p>Bio: {{user.bio}}</p><button>Edit</button>
+<p>My profile picture:</p> 
+<img src="{{user.photo.url}}" alt="{{user.username}} photo">
+<form action="/events/{{event.id}}/newComment" method="POST" enctype="multipart/form-data">
+  <input type="file" name="picName" id="picName">
+  <button>Create event</button>
+</form>
 </div>

@@ -22,6 +22,8 @@ const userSchema = new Schema(
       trim: true
       // match: [EMAIL_PATTERN, "this is not a correct email"]
     },
+    name: String,
+    surname: String,
     photo: { 
       url: String, 
       name: String,
@@ -29,7 +31,7 @@ const userSchema = new Schema(
      },
     location: String,
     bio: String,
-    interests: {type: String},
+    // interests: {type: String},
     validationCode: { type: String },
     active: { type: Boolean, default: false }
   },
