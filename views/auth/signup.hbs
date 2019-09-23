@@ -1,7 +1,6 @@
 <h2>Signup</h2>
 
-<form action="/auth/signup" method="POST" id="signup-form"
-  enctype="multipart/form-data">
+<form action="/auth/signup" method="POST" id="signup-form" enctype="multipart/form-data">
 
   <div class="form-field">
     <label for="email">Email</label>
@@ -21,6 +20,17 @@
   <div class="form-field">
     <label for="password">Password</label>
     <input id="password" type="password" name="password" placeholder="Password">
+  </div>
+
+  <div class="form-field">
+    <label for="username">Location</label>
+    <input id="username" type="text" name="location" placeholder="Username">
+  </div>
+
+  <div class="form-field">
+    <label for="bio">Give us some info about you</label>
+    <textarea for="bio" cols="30" rows="4" name="bio"
+      placeholder="Tell us about your interests, who are you... The more you tell us, the more our BBQ mates will know!"></textarea>
   </div>
 
   {{#if message }}

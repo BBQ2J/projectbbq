@@ -1,7 +1,7 @@
 const mongoose     = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost/irontumblr', {useNewUrlParser: true})
+  .connect('mongodb://localhost/proyectBBQ', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

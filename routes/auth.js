@@ -51,7 +51,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
-  const { username, password, email } = req.body;
+  const { username, password, email, bio, location } = req.body;
   const { originalname, url } = req.file;
 
   if (username === "" || password === "" || email === "") {
@@ -78,6 +78,8 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
         url,
         name: originalname
       },
+      bio,
+      location,
       validationCode
     });
 
@@ -121,6 +123,5 @@ router.get("/confirm/:token", (req, res) => {
   })
 }
 ) 
-
 
 module.exports = router;
