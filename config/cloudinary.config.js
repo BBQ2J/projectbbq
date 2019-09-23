@@ -10,7 +10,7 @@ cloudinary.config({
 
 const storage = cloudinaryStorage({
   cloudinary,
-  folder: 'lab-cloudinary',
+  folder: 'projectBBQ',
   allowedFormats: ['jpg', 'png', 'svg'],
   function(req, file, cb) {
     cb(null, file.originalname);
