@@ -1,10 +1,10 @@
 {{#each events}}
 {{!-- {{> eventPartial}} --}}
 <div class="event">
-<h2 class="event-title">{{this.title}}</h2>
+<a href="/events/{{this.id}}"><h2 class="event-title">{{this.title}}</h2></a>
 <p>Created by: {{this.creatorId.username}}</p>
 <p>{{content}}</p>
-<img src="{{picPath}}" alt="{{picName}}">
+{{!-- <img src="{{picPath}}" alt="{{picName}}"> --}}
 <br>
 <p>Comments: {{this.comments.length}}</p>
 <a href="/events/{{this.id}}">Comment</a>

@@ -11,10 +11,10 @@
 
   <nav>
     <a href="/">Home</a>
-    <a href="/posts">Posts</a>
+    <a href="/events">Events</a>
     {{#if user}}
-    <a href="/posts/new">New post</a>
-    <a href="/profile/{{user.username}}">Profile</a>
+    <a href="/events/new">Create Event</a>
+    <a href="/profile/{{user.username}}">Your Profile</a>
     <a href="/auth/logout">Logout</a>
     {{else}}
     <a href="/auth/login">Login</a>
