@@ -3,28 +3,42 @@
 <form action="/auth/signup" method="POST" id="signup-form" enctype="multipart/form-data">
 
   <div class="form-field">
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" placeholder="Your email">
+    <label for="username">Username*</label>
+    <input id="username" type="text" name="username" placeholder="Username">
   </div>
 
   <div class="form-field">
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username" placeholder="Username">
+    <label for="password">Password*</label>
+    <input id="password" type="password" name="password" placeholder="Password">
+  </div>
+
+  <div class="form-field">
+    <label for="email">E-mail*</label>
+    <input id="email" type="email" name="email" placeholder="Your email">
+  </div>
+
+  <br>
+  <p>*All fields marked with an asterisk must be filled.</p>
+  <br>
+
+  <div class="form-field">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" placeholder="Name">
+  </div>
+
+  <div class="form-field">
+    <label for="surname">Surname</label>
+    <input id="surname" type="text" name="surname" placeholder="Surname">
+  </div>
+
+  <div class="form-field">
+    <label for="location">Location</label>
+    <input id="location" type="text" name="location" placeholder="Location">
   </div>
 
   <div class="form-field">
     <label for="user-photo">Photo</label>
     <input type="file" name="userPhoto" id="user-photo">
-  </div>
-
-  <div class="form-field">
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Password">
-  </div>
-
-  <div class="form-field">
-    <label for="username">Location</label>
-    <input id="username" type="text" name="location" placeholder="Username">
   </div>
 
   <div class="form-field">

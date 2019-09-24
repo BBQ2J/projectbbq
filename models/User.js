@@ -22,6 +22,8 @@ const userSchema = new Schema(
       trim: true
       // match: [EMAIL_PATTERN, "this is not a correct email"]
     },
+    name: String,
+    surname: String,
     photo: { 
       url: String, 
       name: String,

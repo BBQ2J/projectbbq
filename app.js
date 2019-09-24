@@ -46,7 +46,7 @@ hbs.registerPartials("./views/partials");
 
 
 // default value for title local
-app.locals.title = 'projectBBQ';
+app.locals.title = 'Embers Pals';
 
 
 
