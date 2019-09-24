@@ -2,6 +2,13 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
+.menu {
+  float: right; }
+
+h1 {
+  text-align: center;
+  font-size: 130px; }
+
 a {
   color: #00B7FF; }
 

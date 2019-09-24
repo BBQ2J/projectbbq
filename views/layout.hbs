@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/events">Events</a>
-    {{#if user}}
-    <a href="/events/new">Create Event</a>
-    <a href="/profile/{{user.username}}">Your Profile</a>
-    <a href="/auth/logout">Logout</a>
-    {{else}}
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    {{/if}}
-    
-  </nav>
-
   {{{body}}}
-  
-
 
   <script src="/javascripts/script.js"></script>
 </body>
