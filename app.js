@@ -8,13 +8,12 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-
+const passport   = require("passport");
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
+const User = require('./models/User');
     
-
-
 require('./config/db.config')
 
 const app_name = require('./package.json').name;
@@ -67,5 +66,6 @@ app.use((req, res, next) => {
 
 const index = require('./routes/index');
 app.use('/', index);
+
 
 module.exports = app;

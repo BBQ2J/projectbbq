@@ -26,6 +26,14 @@
     <h4>Light up a campfire and share great moments.</h4>
   </div>
 
+  {{#unless user}}
+  Home page
+  <div>
+    <a href="/auth/google">Login With Google</a>
+    <a href="/auth/facebook">Login with Facebook</a>
+  </div>
+  {{/unless}}
+
   <div class="button">
     <a href="/auth/signup" class="button2">Go for it</a>
   </div>
