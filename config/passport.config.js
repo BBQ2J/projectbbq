@@ -36,7 +36,8 @@ passport.use(
 passport.use(new FacebookStrategy({
     clientID: `${process.env.FACEBOOK_ID}`,
     clientSecret: `${process.env.FACEBOOK_SECRET}`,
-    callbackURL: "/auth/facebook/callback"
+    callbackURL: "/auth/facebook/callback",
+    profileFields: ['emails']
   },
   (accessToken, refreshToken, profile, done) => {
     // to see the structure of the data in received response:
@@ -49,7 +50,7 @@ passport.use(new FacebookStrategy({
           return;
         }
 
-        User.create({ facebookID: profile.id, email: "your@email.com", username: profile.displayName, active: true  })
+        User.create({ facebookID: profile.id, email: profile.emails[0].value, username: profile.displayName, active: true  })
           .then(newUser => {
             done(null, newUser);
           })

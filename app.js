@@ -19,37 +19,6 @@ require('./config/db.config')
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: `${process.env.GOOGLE_ID}`,
-      clientSecret: `${process.env.GOOGLE_SECRET}`,
-      callbackURL: "/auth/google/callback"
-    },
-    (accessToken, refreshToken, profile, done) => {
-      // to see the structure of the data in received response:
-      console.log("Google account details:", profile);
-
-      User.findOne({ googleID: profile.id })
-        .then(user => {
-          if (user) {
-            done(null, user);
-            return;
-          }
-
-          User.create({ googleID: profile.id, email: profile.emails[0].value, username: profile.displayName, active: true  })
-            .then(newUser => {
-              done(null, newUser);
-            })
-            .catch(err => done(err)); // closes User.create()
-        })
-        .catch(err => done(err)); // closes User.findOne()
-    }
-  )
-);
-
 const app = express();
 
 // Middleware Setup
@@ -76,11 +45,7 @@ hbs.registerPartials("./views/partials");
 
 
 // default value for title local
-<<<<<<< HEAD
 app.locals.title = 'Embers Pals';
-=======
-app.locals.title = 'EmbersPals';
->>>>>>> socialLogins
 
 
 

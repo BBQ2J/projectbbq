@@ -29,18 +29,15 @@ router.get("/login", (req, res, next) => {
   }
 });
 
-router.post(
-  "/login",[
-    access.checkUserStatus,
-    passport.authenticate("local",{
-      successRedirect: "/",
-      failureRedirect: "/auth/login",
-      failureFlash: true,
-      passReqToCallback: true
-    })
-  ]
-    
-);
+router.post("/login", [
+  access.checkUserStatus,
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/auth/login",
+    failureFlash: true,
+    passReqToCallback: true
+  })
+]);
 
 router.get("/signup", (req, res, next) => {
   if (req.query.error) {
@@ -84,7 +81,7 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
       location,
       validationCode
     });
-    console.log(newUser)
+    console.log(newUser);
     newUser.save().then(newUser => {
       transporter
         .sendMail({
@@ -116,6 +113,7 @@ router.get(
     ]
   })
 );
+
 router.get(
   "/google/callback",
   passport.authenticate("google", {
@@ -124,13 +122,17 @@ router.get(
   })
 );
 
-router.get('/facebook', passport.authenticate('facebook'));
+router.get("/facebook", passport.authenticate("facebook", {
+  scope: ['email']
+}));
 
-router.get('/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: '/events',
-                                      failureRedirect: '/login' }));
-
-
+router.get(
+  "/facebook/callback",
+  passport.authenticate("facebook", {
+    successRedirect: "/events",
+    failureRedirect: "/login"
+  })
+);
 
 router.get("/logout", (req, res) => {
   req.logout();
@@ -138,17 +140,19 @@ router.get("/logout", (req, res) => {
 });
 
 router.get("/confirm/:token", (req, res) => {
-  User.updateOne({validationCode: req.params.token}, {active: true}, {new: true})
-  .then(userUpdated => {
+  User.updateOne(
+    { validationCode: req.params.token },
+    { active: true },
+    { new: true }
+  ).then(userUpdated => {
     if (userUpdated) {
-      res.render("auth/activation", {user: true});
-      return
+      res.render("auth/activation", { user: true });
+      return;
     } else {
-      res.render("auth/activation", {error: true});
-      return
+      res.render("auth/activation", { error: true });
+      return;
     }
-  })
-}
-) 
+  });
+});
 
 module.exports = router;
