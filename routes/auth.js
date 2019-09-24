@@ -122,6 +122,14 @@ router.get(
   })
 );
 
+router.get('/facebook', passport.authenticate('facebook'));
+
+router.get('/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/events',
+                                      failureRedirect: '/login' }));
+
+
+
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
