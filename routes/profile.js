@@ -12,12 +12,12 @@ router.get("/:username/editProfile", access.checkLogin, (req, res, next) => {
 });
 
 router.post("/:username/editProfile", [access.checkLogin, upload.single("userPhoto")], (req, res, next) => {
-  const { name, surname, username, bio, location } = req.body;
-  const { url } = req.file || "";
-
+  const { name, surname, username, bio, location, age, userPhoto } = req.body;
+  const { url } = req.file || '' ;
+console.log(req.body.userPhoto)
   User.findOneAndUpdate(
     { _id: req.user._id },
-    { name, surname, username, bio, location, photo: url },
+    { name, surname, username, bio, location, age, userPhoto, photo: url },
     { new: true }
   )
     .then(updatedUser => {

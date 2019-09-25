@@ -27,6 +27,7 @@ let users = [
     email: "carlosdj_69@vengahijo.com",
     photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569425858/EmbersPals/g6wvq3diciursd1doijm.gif",
     location: "Quevedohood",
+    age: 32,
     // interests: "",
     bio: "Me gusta pinchar (discos) y beber mucha agua principalmente",
     active: true
@@ -39,6 +40,7 @@ let users = [
     email: "luca@porcodio.com",
     photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569430310/EmbersPals/ezgif-3-53492a4ca1ba_vda6lp.jpg",
     location: "Indra",
+    age: 30,
     // interests: "Mandalas y hermanos",
     bio: "Me gusta el Chesese y el htmmmmmeeele. El secreto esta en la masa :)",
     active: true
@@ -51,18 +53,7 @@ let users = [
     email: "luca@porcodio.com",
     photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569429708/EmbersPals/ezgif-3-d5e515bf037f_g1aixe.jpg",
     location: "Discoteca Coco-Loco",
-    // interests: "Mandalas y hermanos",
-    bio: "Mi pasión es el macramé los sábados noche",
-    active: true
-  },
-  {
-    name: "Alfonso",
-    surname: "Martínez Rodera",
-    username: "sito",
-    password: bcrypt.hashSync("sito", bcrypt.genSaltSync(bcryptSalt)),
-    email: "luca@porcodio.com",
-    photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569425930/ezgif-3-d5e515bf037f_x92doc.jpg",
-    location: "Discoteca Coco-Loco",
+    age: 34,
     // interests: "Mandalas y hermanos",
     bio: "Mi pasión es el macramé los sábados noche",
     active: true
@@ -75,6 +66,7 @@ let users = [
     email: "ana@email.com",
     photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569429708/EmbersPals/ezgif-3-25bcb6fb2ac3_ymakyo.jpg",
     location: "Legazpi (Madrid)",
+    age: 31,
     // interests: "Mandalas y hermanos",
     bio: "No hay que perder la tradicion de la merienda",
     active: true
@@ -86,7 +78,8 @@ let users = [
     password: bcrypt.hashSync("eva", bcrypt.genSaltSync(bcryptSalt)),
     email: "eva@email.com",
     photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569429708/EmbersPals/ezgif-3-4abc83d93f95_egc3wd.jpg",
-    location: "Legazpi (Madrid)",
+    location: "Las Tablas (Madrid)",
+    age: 28,
     // interests: "Mandalas y hermanos",
     bio: "No hay que perder la tradicion de la merienda",
     active: true
@@ -99,6 +92,7 @@ let users = [
     email: "noa@email.com",
     photo: "https://res.cloudinary.com/dq8yw5qca/image/upload/v1569429708/EmbersPals/ezgif-3-0c4d3159ad59_qjynp2.jpg",
     location: "Usera (Madrid)",
+    age: 27,
     // interests: "Mandalas y hermanos",
     bio: "Hija de Giorgi Dann 😉",
     active: true
