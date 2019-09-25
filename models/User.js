@@ -28,6 +28,7 @@ const userSchema = new Schema(
       type: String,
       default: 'http://www.jbhasteam.com/sites/default/files/default-user.png'
      },
+    age: Number,
     location: String,
     bio: String,
     // interests: {type: String},

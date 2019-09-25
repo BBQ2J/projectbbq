@@ -14,6 +14,10 @@
     <input id="surname" type="text" name="surname" value="{{user.surname}}">
 </div>
 <div class="form-field">
+    <label for="age">Your age:</label>
+    <input id="age" type="number" name="age" value="{{user.age}}">
+</div>
+<div class="form-field">
     <label for="location">Your location:</label>
     <input id="location" type="text" name="location" value="{{user.location}}">
   </div>
@@ -23,7 +27,7 @@
   </div>
   <div class="form-field">
     <label for="user-photo">My profile picture:</label>
-    <img src="{{user.photo.url}}" alt="{{user.username}} photo">
+    <img src="{{user.photo}}" alt="{{user.username}} photo">
     <input type="file" name="userPhoto" id="user-photo">
   </div> 
 
