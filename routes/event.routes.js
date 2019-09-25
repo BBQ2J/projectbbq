@@ -27,17 +27,15 @@ router.post(
   (req, res, next) => {
     let { title, content } = req.body;
 
-    if (!content || !title || !req.file) {
+    if (!content || !title) {
       res.redirect("/events/new?error=empty-fields");
       return;
     }
 
-    let { originalname } = req.file;
     let { url } = req.file || "";
     Event.create({
       title,
       content,
-      picName: originalname,
       picPath: url,
       creatorId: req.user._id
     })
