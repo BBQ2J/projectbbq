@@ -4,7 +4,7 @@
 
 {{#if event.Owner}}
 <p><a href="/events/{{event._id}}/edit">Edit this event</a></p>
-<p><a href="">Delete this event</a></p>
+<p><a href="/events/{{event._id}}/delete">Delete this event</a></p>
 {{/if}}
 
 {{#each event.comments}}

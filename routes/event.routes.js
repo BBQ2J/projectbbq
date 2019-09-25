@@ -127,4 +127,16 @@ router.post("/:id/edit", [access.checkLogin, upload.single("picPath")], (req, re
     });
 });
 
+router.get('/:id/delete', (req, res, next) => {
+	Event.findByIdAndRemove({ _id: req.params.id }, function(error, place) {
+		if (error) {
+			next(error);
+		} else {
+			res.redirect('/events');
+		}
+	});
+});
+
+router.get
+
 module.exports = router;
