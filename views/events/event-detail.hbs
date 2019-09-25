@@ -12,11 +12,18 @@
     <p>Author: {{this.authorId.username}}</p>
     <p>Content: {{this.content}}</p>
   </div>
+  {{#is ../user.username this.authorId.username}}  
+    <form action="/events/{{this._id}}/deleteComment" method="POST">
+    {{!-- <p><a href="/events/{{this._id}}/deleteComment"></a></p> --}}
+    <button type="submit">Delete</button>
+    </form>
+  {{/is}}
 {{/each}}
-<form action="/events/{{event.id}}/newComment" method="POST" enctype="multipart/form-data">
+  
+<form action="/events/{{event.id}}/newComment" method="POST">
   <textarea for="content" cols="30" rows="10" name="content">Content</textarea>
   <input type="file" name="picName" id="picName">
-  <button>Create event</button>
+  <button>Create comment</button>
 </form>
 
 <div class="error-message"></div>

@@ -48,57 +48,20 @@ router.post(
   }
 );
 
-router.post(
-  "/:eventid/newComment",
-  [access.checkLogin, upload.single("picName")],
-  (req, res, next) => {
-    let { content } = req.body;
-    let { eventid } = req.params;
-    if (!content) {
-      res.redirect("/events/newComment?error=empty-fields");
-      return;
-    }
-    let originalname = null;
-    let url = null;
-    if (req.file) {
-      originalname = req.file.originalname;
-      url = req.file.url;
-    }
-    Comment.create({
-      content,
-      picName: originalname,
-      picPath: url,
-      authorId: req.user._id
-    })
-      .then(newComment => {
-        console.log(newComment);
-        Event.findByIdAndUpdate(eventid, {
-          $push: { comments: newComment._id }
-        }).then(commentAdded => {
-          res.redirect(`/events/${eventid}`);
-          return;
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-);
-
 router.get("/:id", access.checkLogin, (req, res, next) => {
+  const user= req.user;
   Event.findById(req.params.id)
     .populate("creatorId")
     .populate({ path: "comments", populate: { path: "authorId" } })
     .then(event => {
       event.Owner = false;
-
-      if (
-        event.creatorId._id.toString() === req.session.passport.user.toString()
-      ) {
+    
+      if (event.creatorId._id.toString() === req.session.passport.user.toString()) {
         event.Owner = true;
       }
+      
 
-      res.render("events/event-detail", {event});
+      res.render("events/event-detail", {event, user});
     });
 });
 
@@ -107,7 +70,6 @@ router.get("/:id/edit", access.checkLogin, (req, res, next) =>  {
   .then(event => {
     res.render("events/event-edit", {event});
   })
-
 })
 
 router.post("/:id/edit", [access.checkLogin, upload.single("picPath")], (req, res, next) => {

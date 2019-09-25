@@ -10,6 +10,8 @@ router.use('/auth', require('./auth'));
       
 router.use("/events", require("./event.routes"));
 
+router.use("/events", require("./comment.routes"));
+
 router.use("/profile", require("./profile"));
 
 module.exports = router;
