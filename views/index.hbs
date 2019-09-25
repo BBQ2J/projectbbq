@@ -4,20 +4,25 @@
 
 <div class="fondo">
   <h1>{{title}}</h1>
+  <div class="description">
   <h4>Embers Pals was born to connect people around the world with what we love the most</h4>
   <div class='text2'>
     <h4>Light up a campfire and share great moments.</h4>
   </div>
-
-  {{#unless user}}
-  Home page
-  <div>
-    <a href="/auth/google">Login With Google</a>
-    <a href="/auth/facebook">Login with Facebook</a>
   </div>
-  {{/unless}}
 
+  {{!-- {{#unless user}} --}}
+
+<div class="login-box">
+			<h2>Choose your favourite social network</h2>
+			<a href="/auth/facebook" class="social-button" id="facebook-connect"> <span>Log in with Facebook</span></a>
+			<a href="/auth/google" class="social-button" id="google-connect"> <span>Log in with Google</span></a>
+		</div>
+    
+  {{!-- {{/unless}} --}}
   <div class="button">
-    <a href="/auth/signup" class="button2">Go for it</a>
+    <a href="/auth/signup" class="button2">Light up the coals</a>
   </div>
 </div>
+
+

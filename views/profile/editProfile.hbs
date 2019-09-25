@@ -1,0 +1,34 @@
+
+<h2 class="event-title">Your profile</h2>
+<form action="/profile/{{user.username}}/editProfile" method="POST">
+<div class="form-field">
+    <label for="username">Your username:</label>
+    <input id="username" type="text" name="username" value="{{user.username}}">
+  </div>
+ <div class="form-field">
+    <label for="name">Your name:</label>
+    <input id="name" type="text" name="name" value="{{user.name}}">
+    </div> 
+<div class="form-field">
+    <label for="surname">Your surname:</label>
+    <input id="surname" type="text" name="surname" value="{{user.surname}}">
+</div>
+<div class="form-field">
+    <label for="location">Your location:</label>
+    <input id="location" type="text" name="location" value="{{user.location}}">
+  </div>
+<div class="form-field">
+    <label for="bio">Your bio:</label>
+    <textarea for="bio" cols="30" rows="4" name="bio">{{user.bio}}</textarea>
+  </div>
+  <div class="form-field">
+    <label for="user-photo">My profile picture:</label>
+    <img src="{{user.photo.url}}" alt="{{user.username}} photo">
+    <input type="file" name="userPhoto" id="user-photo">
+  </div> 
+
+  <input type="submit" value="Edit">
+
+  </form>
+
+
