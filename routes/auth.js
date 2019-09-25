@@ -48,7 +48,7 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
   const { name, surname, username, password, email, bio, location } = req.body;
-  const { originalname, url } = req.file;
+  const { url } = req.file || "";
 
   if (username === "" || password === "" || email === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
@@ -72,16 +72,14 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
       email,
       name,
       surname,
-      photo: {
-        url,
-        name: originalname
-      },
+      photo: url,
       bio,
       location,
       validationCode
     });
     console.log(newUser);
     newUser.save().then(newUser => {
+      console.log("xxx")
       transporter
         .sendMail({
           from: "info@info.com",

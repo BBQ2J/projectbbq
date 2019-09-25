@@ -1,25 +1,21 @@
-<h2 class="event-title">Your profile</h2>
-<form action="/" method="POST">
-<div class="form-field">
-    <label for="title">Name your event:</label>
+<h2 class="event-title">Wanna make some changes?</h2>
+<form action="/events/{{event._id}}/edit" method="POST" enctype="multipart/form-data">
+  <div class="form-field">
+    <label for="title">Name of your event: </label>
     <input id="title" type="text" name="title" value="{{event.title}}">
   </div>
- <div class="form-field">
-    <label for="content">Put a description:</label>
+  <div class="form-field">
+    <label for="content">Describe a bit what you want to do: </label>
     <input id="content" type="text" name="content" value="{{event.content}}">
-    </div> 
-<div class="form-field">
-    <label for="location">Where is it gonna be?:</label>
-    <input id="location" type="text" name="location" value="{{event.location}}">
-</div>
-{{!-- <div class="form-field">
-    <label for="picName">Your picName:</label>
-    <textarea for="picName" cols="30" rows="4" name="picName">{{event.picName}}</textarea>
   </div>
   <div class="form-field">
-    <label for="picPath">Your picPath:</label>
-    <textarea for="picPath" cols="30" rows="4" Path="picPath">{{event.picPath}}</textarea>
-  </div> --}}
-​
-  <input type="submit" value="Create Event">
-  </form>
+    <label for="location">Where is it gonna be?: </label>
+    <input id="location" type="text" name="location" value="{{event.location}}">
+  </div>
+  <div>
+    <label for="picPath">Change the picture for the event: </label>
+    <img src="{{event.picPath}}" alt="Event Photo">
+    <input type="file" name="picPath" id="picPath">
+  </div>
+  <input type="submit" value="Accept Changes">
+</form>

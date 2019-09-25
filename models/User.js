@@ -25,9 +25,8 @@ const userSchema = new Schema(
     name: String,
     surname: String,
     photo: { 
-      url: String, 
-      name: String,
-      // default: 'http://www.jbhasteam.com/sites/default/files/default-user.png'
+      type: String,
+      default: 'http://www.jbhasteam.com/sites/default/files/default-user.png'
      },
     location: String,
     bio: String,

@@ -32,7 +32,8 @@ router.post(
       return;
     }
 
-    let { originalname, url } = req.file;
+    let { originalname } = req.file;
+    let { url } = req.file || "";
     Event.create({
       title,
       content,
@@ -103,23 +104,27 @@ router.get("/:id", access.checkLogin, (req, res, next) => {
     });
 });
 
-// router.get("/:id/edit", access.checkLogin, (req, res, next) =>  {
-//   res.render("events/event-edit")
-// })
+router.get("/:id/edit", access.checkLogin, (req, res, next) =>  {
+  Event.findById(req.params.id)
+  .then(event => {
+    res.render("events/event-edit", {event});
+  })
 
-// router.post("/:id/edit", access.checkLogin, (req, res, next) => {
-//   const { title, content, date, location, picName, picPath } = req.body;
-//   Event.findByIdAndUpdate(
-//     req.params.id,
-//     { title, content, date, location, picName, picPath },
-//     { new: true }
-//   )
-//     .then(updatedEvent => {
-//       res.redirect("/:id");
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// });
+})
+
+router.post("/:id/edit", [access.checkLogin, upload.single("picPath")], (req, res, next) => {
+  const { id } = req.params;
+  const { title, content, date, location } = req.body;
+  const { url } = req.file || "";
+  console.log(id, title, content, url)
+  Event.findByIdAndUpdate(id, { title, content, date, location, picPath: url }, { new: true })
+    .then(updatedEvent => {
+      console.log(updatedEvent)
+      res.redirect(`/events/${id}`);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
 
 module.exports = router;
