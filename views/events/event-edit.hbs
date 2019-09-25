@@ -1,0 +1,25 @@
+<h2 class="event-title">Your profile</h2>
+<form action="/" method="POST">
+<div class="form-field">
+    <label for="title">Name your event:</label>
+    <input id="title" type="text" name="title" value="{{event.title}}">
+  </div>
+ <div class="form-field">
+    <label for="content">Put a description:</label>
+    <input id="content" type="text" name="content" value="{{event.content}}">
+    </div> 
+<div class="form-field">
+    <label for="location">Where is it gonna be?:</label>
+    <input id="location" type="text" name="location" value="{{event.location}}">
+</div>
+{{!-- <div class="form-field">
+    <label for="picName">Your picName:</label>
+    <textarea for="picName" cols="30" rows="4" name="picName">{{event.picName}}</textarea>
+  </div>
+  <div class="form-field">
+    <label for="picPath">Your picPath:</label>
+    <textarea for="picPath" cols="30" rows="4" Path="picPath">{{event.picPath}}</textarea>
+  </div> --}}
+​
+  <input type="submit" value="Create Event">
+  </form>

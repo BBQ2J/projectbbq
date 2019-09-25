@@ -1,4 +1,9 @@
-{{> eventPartial event=event}}
+{{>eventPartial event=event}}
+
+{{#if event.Owner}}
+<p><a href="">Edit this event</a></p>
+<p><a href="">Delete this event</a></p>
+{{/if}}
 
 {{#each event.comments}}
   <div class="comment">

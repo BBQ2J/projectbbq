@@ -19,14 +19,6 @@ mongoose
   });
 
 let users = [
-  // {
-  //   username: "alice",
-  //   password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
-  // },
-  // {
-  //   username: "bob",
-  //   password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
-  // },
   {
     username: "pepe",
     password: bcrypt.hashSync("pepe", bcrypt.genSaltSync(bcryptSalt)),
@@ -58,6 +50,28 @@ let users = [
     active: true
   }
 ]
+
+const events = {
+    title: String,
+    content: String,
+    date: { type: Date, min: Date.now },
+    location: String,
+    creatorId: { type : Schema.Types.ObjectId, ref: 'User' },
+    picName: String,
+    picPath: String,
+    comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
+  },
+    {
+      title: String,
+      content: String,
+      date: { type: Date, min: Date.now },
+      location: String,
+      creatorId: { type : Schema.Types.ObjectId, ref: 'User' },
+      picName: String,
+      picPath: String,
+      comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
+    }
+};
 
 User.deleteMany()
 .then(() => {

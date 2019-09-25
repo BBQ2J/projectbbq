@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = cloudinaryStorage({
   cloudinary,
   folder: 'EmbersPals',
-  allowedFormats: ['jpg', 'png', 'svg'],
+  allowedFormats: ['jpg', 'png', 'svg', 'gif'],
   function(req, file, cb) {
     cb(null, file.originalname);
   }

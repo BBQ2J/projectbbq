@@ -8,7 +8,6 @@ const upload = require("./../config/cloudinary.config");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const access = require("./../middlewares/access.mid");
-// Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const transporter = nodemailer.createTransport({

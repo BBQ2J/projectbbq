@@ -4,7 +4,7 @@ const access = require("../middlewares/access.mid");
 const Event = require("../models/Event");
 const Comment = require("../models/Comment");
 
-router.get("/", (req, res, next) => {
+router.get("/", access.checkLogin, (req, res, next) => {
   Event.find()
     .populate("creatorId")
     .then(events => {
@@ -73,7 +73,9 @@ router.post(
     })
       .then(newComment => {
         console.log(newComment);
-        Event.findByIdAndUpdate(eventid, { $push: { comments: newComment._id } }).then(commentAdded => {
+        Event.findByIdAndUpdate(eventid, {
+          $push: { comments: newComment._id }
+        }).then(commentAdded => {
           res.redirect(`/events/${eventid}`);
           return;
         });
@@ -84,15 +86,40 @@ router.post(
   }
 );
 
-router.get("/:id", (req, res, next) => {
+router.get("/:id", access.checkLogin, (req, res, next) => {
   Event.findById(req.params.id)
     .populate("creatorId")
     .populate({ path: "comments", populate: { path: "authorId" } })
     .then(event => {
-      res.render("events/event-detail", {
-        event
-      });
+      event.Owner = false;
+
+      if (
+        event.creatorId._id.toString() === req.session.passport.user.toString()
+      ) {
+        event.Owner = true;
+      }
+
+      res.render("events/event-detail", {event});
     });
 });
+
+// router.get("/:id/edit", access.checkLogin, (req, res, next) =>  {
+//   res.render("events/event-edit")
+// })
+
+// router.post("/:id/edit", access.checkLogin, (req, res, next) => {
+//   const { title, content, date, location, picName, picPath } = req.body;
+//   Event.findByIdAndUpdate(
+//     req.params.id,
+//     { title, content, date, location, picName, picPath },
+//     { new: true }
+//   )
+//     .then(updatedEvent => {
+//       res.redirect("/:id");
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// });
 
 module.exports = router;
