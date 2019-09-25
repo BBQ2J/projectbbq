@@ -26,6 +26,13 @@ router.post("/:username/editProfile", access.checkLogin, (req, res, next) => {
     .catch(err => {
       console.log(err);
     });
+
+  User.findOne({ username }, "username", (err, user) => {
+      if (user !== null) {
+        res.render("profile/editProfile", { message: "The username already exists" });
+        return;
+      }
+    })
 });
 
 // router.post()

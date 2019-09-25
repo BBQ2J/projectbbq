@@ -1,8 +1,9 @@
-<div class="profile">
+{{!-- <div class="profile"> --}}
 <h2 class="event-title">Your profile</h2>
 <p>Name: {{user.name}}</p> 
 <p>Surname: {{user.surname}}</p> 
 <p>Username: {{user.username}}</p> 
+<p>E-mail: {{user.email}}</p>
 <p>Location: {{user.location}}</p>
 <p>Bio: {{user.bio}}</p>
 <p>My profile picture:</p> 
@@ -13,4 +14,4 @@
 </form>
 
 <a href="/profile/{{user.username}}/editProfile">Edit your profile</a>
-</div>
+{{!-- </div> --}}

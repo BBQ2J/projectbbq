@@ -1,15 +1,172 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
+@import url("https://fonts.googleapis.com/css?family=Mansalva&display=swap");
 .menu {
+  letter-spacing: 1.5px;
+  font-size: 24px;
+  padding: 30px;
   float: right; }
 
+.fondo {
+  width: 100vw;
+  height: 100vh;
+  background-position-y: -100px;
+  background-repeat: no-repeat;
+  background-image: url("https://images.unsplash.com/photo-1533088339408-74fcf62b8e6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"); }
+
 h1 {
+  font-family: 'Mansalva', cursive;
   text-align: center;
-  font-size: 130px; }
+  font-size: 135px;
+  color: white;
+  padding-top: 100px; }
+
+.description {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  padding-top: 80px; }
+
+.text2 {
+  margin-top: 20px; }
+
+.button {
+  opacity: 0.8;
+  color: #fff;
+  background: #ed3330;
+  font-size: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 30px; }
+
+.button:hover {
+  background: #434343;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s; }
 
 a {
-  color: #00B7FF; }
+  text-decoration: none; }
+
+.login-box {
+  display: grid;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.7;
+  padding: 10px;
+  max-width: 480px;
+  text-align: center;
+  letter-spacing: 2px; }
+
+.login-box h2 {
+  text-align: center;
+  margin: 20px 0 20px;
+  font-size: 20px;
+  color: rgba(243, 28, 24, 0.686); }
+
+.social-button {
+  background-position: 25px 0px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 3px;
+  margin: 10px auto;
+  outline: white none 0px;
+  padding-left: 20%;
+  transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+#facebook-connect {
+  background: white url("https://raw.githubusercontent.com/eswarasai/social-login/master/img/facebook.svg?sanitize=true") no-repeat scroll 5px 0px/30px 50px padding-box border-box;
+  border: 1px solid #3c5a9a; }
+
+#facebook-connect:hover {
+  border-color: #3c5a9a;
+  background: #3c5a9a url("https://raw.githubusercontent.com/eswarasai/social-login/master/img/facebook-white.svg?sanitize=true") no-repeat scroll 5px 0px/30px 50px padding-box border-box;
+  -webkit-transition: all .8s ease-out;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease-out; }
+
+#facebook-connect span {
+  box-sizing: border-box;
+  color: #3c5a9a;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0px none white;
+  outline: white none 0px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+#facebook-connect:hover span {
+  color: #FFF;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+#google-connect {
+  background: white url("https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus.png") no-repeat scroll 5px 0px/50px 50px padding-box border-box;
+  border: 1px solid #dc4a3d; }
+
+#google-connect:hover {
+  border-color: #dc4a3d;
+  background: #dc4a3d url("https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus-white.png") no-repeat scroll 5px 0px/50px 50px padding-box border-box;
+  -webkit-transition: all .8s ease-out;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease-out; }
+
+#google-connect span {
+  box-sizing: border-box;
+  color: #dc4a3d;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0px none #dc4a3d;
+  outline: white none 0px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+#google-connect:hover span {
+  color: #FFF;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+.signup {
+  width: auto;
+  height: 100vh;
+  background-color: rgba(220, 74, 61, 0.918);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 200px; }
 
 /*# sourceMappingURL=style.css.map */
