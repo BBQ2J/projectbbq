@@ -8,10 +8,5 @@
 <p>Bio: {{user.bio}}</p>
 <p>My profile picture:</p> 
 <img src="{{user.photo.url}}" alt="{{user.username}} photo">
-<form action="/events/{{event.id}}/newComment" method="POST" enctype="multipart/form-data">
-  <input type="file" name="picName" id="picName">
-  <button>Upload picture</button>
-</form>
-
 <a href="/profile/{{user.username}}/editProfile">Edit your profile</a>
 {{!-- </div> --}}

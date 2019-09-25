@@ -11,7 +11,7 @@ router.get("/:username/editProfile", access.checkLogin, (req, res, next) => {
   res.render("profile/editProfile");
 });
 
-router.post("/:username/editProfile", access.checkLogin, (req, res, next) => {
+router.post("/:username/editProfile", [access.checkLogin, upload.single("userPhoto")], (req, res, next) => {
   const { name, surname, username, bio, location } = req.body;
   // const { originalname, url } = req.file;
 
