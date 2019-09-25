@@ -1,6 +1,6 @@
 
 <h2 class="event-title">Your profile</h2>
-<form action="/profile/{{user.username}}/editProfile" method="POST">
+<form action="/profile/{{user.username}}/editProfile" method="POST" enctype="multipart/form-data">
 <div class="form-field">
     <label for="username">Your username:</label>
     <input id="username" type="text" name="username" value="{{user.username}}">
@@ -23,7 +23,7 @@
   </div>
   <div class="form-field">
     <label for="user-photo">My profile picture:</label>
-    <img src="{{user.photo.url}}" alt="{{user.username}} photo">
+    <img src="{{user.photo}}" alt="{{user.username}} photo">
     <input type="file" name="userPhoto" id="user-photo">
   </div> 
 
