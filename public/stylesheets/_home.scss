@@ -3,9 +3,37 @@
 .menu {
   letter-spacing: 1.5px;
   font-size: 24px;
-  padding: 30px;
+ }
+ .menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(27, 8, 8);
+ }
+ .menu li {
   float: right;
-}
+  border-right: 1px solid #bbb;
+ }
+ .menu li:first-child {
+  border-right: none;
+ }
+ .menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+ }
+ .menu li a:hover {
+  background-color: rgb(189, 93, 15);
+ }
 
 .fondo{
   width: 100vw;

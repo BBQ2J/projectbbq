@@ -1,13 +1,35 @@
-{{!-- <div class="profile"> --}}
-<h2 class="event-title">Your profile</h2>
-<p>Name: {{user.name}}</p> 
-<p>Surname: {{user.surname}}</p>
-<p>Age: {{user.age}}</p>  
-<p>Username: {{user.username}}</p> 
-<p>E-mail: {{user.email}}</p>
-<p>Location: {{user.location}}</p>
-<p>Bio: {{user.bio}}</p>
-<p>My profile picture:</p> 
-<img src="{{user.photo}}" alt="{{user.username}} photo">
-<a href="/profile/{{user.username}}/editProfile">Edit your profile</a>
-{{!-- </div> --}}
+<div class="profile">
+  <div class="profile-text">
+
+      <h2>Your profile</h2>
+
+    <div class="profile-inputs">
+      <p>Name: {{user.name}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>Surname: {{user.surname}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>Age: {{user.age}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>Username: {{user.username}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>E-mail: {{user.email}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>Location: {{user.location}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>Bio: {{user.bio}}</p>
+    </div>
+    <div class="profile-inputs">
+      <p>My profile picture:</p>
+    </div>
+<br>
+    <img src="{{user.photo}}" alt="{{user.username}} photo"><br>
+
+  <a class="btn btn-1 btn-sep icon-info" href="/profile/{{user.username}}/editProfile">Edit your profile</a>
+  </div>
+</div>
