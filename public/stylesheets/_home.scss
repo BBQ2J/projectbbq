@@ -1,10 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
 
+
 .menu {
   letter-spacing: 1.5px;
-  font-size: 24px;
-  padding: 30px;
+  font-size: 24px;  
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(27, 8, 8);
+}
+
+.menu li {
   float: right;
+  border-right: 1px solid #bbb;
+}
+
+.menu li:first-child {
+  border-right: none;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: rgb(189, 93, 15);
 }
 
 .fondo{
@@ -180,29 +214,11 @@ h1 {
   color:white;
 }
 
-.container {
-  width: 50%;
-  max-width: 800px;
-}
-
-#map {
-  height: 50vh;
-  margin-bottom: 10px;
-  display: none;
-}
-
-#locationList .card {
-  padding: 10px;
-}
-
-#toast-container {
-  top: 50%;
-  bottom: unset;
-}
-
-
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 80%;
-  }
+.signup {
+  width: auto;
+  height: 100vh;
+  background-color: rgba(220, 74, 61, 0.918);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 200px;
 }

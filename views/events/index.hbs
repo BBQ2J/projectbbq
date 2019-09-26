@@ -1,18 +1,26 @@
+  <div class="blue-square">
+    <h3>Find New People</h3>
+    <p>And share good moments with a feast!</p>
+  </div>
 <div class="grid-event">
-
-<div class="events">
-{{#each events}}
-{{!-- {{> eventPartial}} --}}
-<div class="event">
-<h2 class="event-title"><a href="/events/{{this.id}}">{{this.title}}</a></h2>
-<p>{{content}}</p>
-<p><img class="avatar" src={{this.creatorId.photo}}>Created by: {{this.creatorId.username}}</p>
-<img src="{{this.picPath}}" alt="Event Photo" width="100px">
-<p>Comments: {{this.comments.length}}</p>
-</div>
-<br>
-{{else}}
-<p>There are no friends heating the embers at this moment! :(</p>
-{{/each}}
-</div>
+  <div class="events">
+    {{#each events}}
+    {{!-- {{> eventPartial}} --}}
+    <div class="time">
+      <p>{{this.date}}</p>
+    </div>
+    <div class="event">
+      <h2 class="event-title"><a href="/events/{{this.id}}">{{this.title}}</a></h2>
+      <p class="author"><img class="avatar" src={{this.creatorId.photo}}> Created by: {{this.creatorId.username}}</p>
+      <p class="content">{{content}}</p>
+      <div class="eventbox">
+      <img class="eventpic" src="{{this.picPath}}" alt="Event Photo">
+      </div>
+      <p class="comments">Comments: {{this.comments.length}}</p>
+    </div>
+    <br>
+    {{else}}
+    <p>There are no friends heating the embers at this moment! :(</p>
+    {{/each}}
+  </div>
 </div>

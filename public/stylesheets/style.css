@@ -1,9 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Mansalva&display=swap");
 .menu {
   letter-spacing: 1.5px;
-  font-size: 24px;
-  padding: 30px;
-  float: right; }
+  font-size: 24px; }
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1b0808; }
+
+.menu li {
+  float: right;
+  border-right: 1px solid #bbb; }
+
+.menu li:first-child {
+  border-right: none; }
+
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+.menu li a:hover {
+  background-color: #bd5d0f; }
 
 .fondo {
   width: 100vw;
@@ -160,29 +188,18 @@ h1 {
   text-decoration: none;
   color: white; }
 
-.container {
-  width: 50%;
-  max-width: 800px; }
-
-#map {
-  height: 50vh;
-  margin-bottom: 10px;
-  display: none; }
-
-#locationList .card {
-  padding: 10px; }
-
-#toast-container {
-  top: 50%;
-  bottom: unset; }
-
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 80%; } }
+.signup {
+  width: auto;
+  height: 100vh;
+  background-color: rgba(220, 74, 61, 0.918);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 200px; }
 
 .flex {
   display: flex;
   justify-content: center;
+  margin-top: 52px;
   width: 100%;
   height: 100vh;
   background-color: rgba(176, 213, 243, 0.918); }
@@ -195,6 +212,7 @@ h1 {
   display: grid;
   padding: 40px 0;
   width: 650px;
+  height: 700px;
   justify-content: center;
   align-items: center;
   margin: auto 0; }
@@ -239,8 +257,6 @@ h1 {
 
 .signup button {
   background: #ae273d;
-  position: relative;
-  left: 140px;
   width: 200px;
   height: 40px;
   padding-top: 5px;
@@ -271,7 +287,7 @@ h1 {
   font-family: "Montserrat", sans-serif;
   display: grid;
   padding: 40px 0;
-  width: 650px;
+  width: 450px;
   justify-content: center;
   align-items: center;
   margin: auto 0; }
@@ -279,12 +295,12 @@ h1 {
 .login h2, .login p {
   font-size: 40px;
   text-align: center;
-  margin-bottom: 10px; }
+  margin-bottom: 30px; }
 
 .login p {
   font-size: 15px;
   font-style: italic;
-  letter-spacing: 2px; }
+  letter-spacing: 1px; }
 
 .login label {
   font-size: 15px; }
@@ -296,9 +312,9 @@ h1 {
 .login input, .login
 textarea {
   background: white;
-  width: 100%;
+  width: 90%;
   border-radius: 6px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 0 12px;
   padding: 10px 0px 10px 10px;
   border: #2980b9 4px solid; }
 
@@ -316,8 +332,6 @@ textarea {
 
 .login button {
   background: #ae273d;
-  position: relative;
-  left: 60px;
   width: 200px;
   height: 40px;
   padding-top: 5px;
@@ -334,29 +348,91 @@ textarea {
 .login button:hover {
   background: #2cc06b; }
 
-.grid-event {
+.login button {
+  position: relative;
+  left: 100px; }
+
+.blue-square {
   margin-top: 52px;
-  display: grid;
-  justify-content: left;
-  padding-top: 60px;
-  padding-left: 120px;
+  background-color: rgba(56, 10, 50, 0.8);
   width: 100%;
-  height: 100vh;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.blue-square h3 {
+  text-align: center;
+  font-size: 80px;
+  color: white;
+  margin-bottom: 20px; }
+
+.blue-square p {
+  text-align: center;
+  font-size: 20px;
+  color: white; }
+
+.grid-event {
+  padding-top: 40px;
+  display: grid;
+  justify-content: center;
+  width: 100%;
   background-color: rgba(176, 213, 243, 0.918); }
+
+.time {
+  padding-bottom: 10px;
+  padding-left: 10px; }
 
 .event {
   font-size: 20px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  width: 600px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(206, 233, 250, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px; }
 
-.event-title {
-  font-size: 40px;
-  text-decoration: none; }
+.event-title a {
+  position: relative;
+  top: 40px;
+  right: 100px;
+  color: rgba(83, 15, 74, 0.8);
+  font-size: 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: helvetica;
+  font-weight: 800;
+  padding-top: 5px;
+  left: 120px; }
+
+.event .author {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(44, 31, 104, 0.3);
+  padding-left: 10px;
+  font-size: 18px; }
 
 .avatar {
-  height: 30px;
-  width: 30px;
+  height: 70px;
+  width: 70px;
+  margin-right: 14px;
   border: 1px solid rgba(104, 31, 31, 0.3);
   overflow: hidden; }
+
+.event .content {
+  padding-top: 20px; }
+
+.event .eventbox {
+  height: 150px;
+  width: 600px;
+  overflow: hidden;
+  margin: 10px 0 20px 0; }
+
+.event .eventpic {
+  position: relative;
+  bottom: 225px;
+  width: 600px; }
 
 .container {
   width: 50%;

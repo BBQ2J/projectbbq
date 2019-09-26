@@ -9,6 +9,7 @@ router.get("/", access.checkLogin, (req, res, next) => {
   Event.find()
     .populate("creatorId")
     .then(events => {
+          events.date = moment(events.date).format("DD/MM/YYYY, h:mm a")
       res.render("events/index", { events });
     });
 });
