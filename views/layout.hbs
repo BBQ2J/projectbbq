@@ -7,29 +7,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <div class="menu">
-      {{#if user}}
-      <a href="/events">Events</a>
-      <a href="/events/new">Create Event</a>
-      <a href="/profile/{{user.username}}">Your Profile</a>
-      <a href="/auth/logout">Logout</a>
-      {{else}}
-      <a href="/">Home</a>
-      <a href="/auth/login">Login</a>
-      <a href="/auth/signup">Signup</a>
-      {{/if}}
-    </div>
-  </nav>
-</header>
-
-  {{{body}}}
+  <header>
+    <nav>
+      <div class="menu">
+        <ul>
+          {{#if user}}
+          <li> <a href="/events">Events</a></li>
+          <li> <a href="/events/new">Create Event</a></li>
+          <li> <a href="/profile/{{user.username}}">Your Profile</a></li>
+          <li> <a href="/auth/logout">Logout</a></li>
+          {{else}}
+          <li> <a href="/auth/signup">Signup</a></li>
+          <li> <a href="/auth/login">Login</a></li>
+          <li> <a href="/">Home</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="underheader">
+    {{{body}}}
+  </div>
 
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>

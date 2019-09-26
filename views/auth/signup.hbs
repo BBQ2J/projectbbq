@@ -4,18 +4,15 @@
   <form action="/auth/signup" method="POST" id="signup-form" enctype="multipart/form-data">
 
     <div class="form-field">
-      <label for="username">Username*</label>
-      <input id="username" type="text" name="username" placeholder="Username">
+      <input id="username" type="text" name="username" placeholder="Username*">
     </div>
 
     <div class="form-field">
-      <label for="password">Password*</label>
-      <input id="password" type="password" name="password" placeholder="Password">
+      <input id="password" type="password" name="password" placeholder="Password*">
     </div>
 
     <div class="form-field">
-      <label for="email">E-mail*</label>
-      <input id="email" type="email" name="email" placeholder="Your email">
+      <input id="email" type="email" name="email" placeholder="Your email*">
     </div>
 
     <br>
@@ -23,32 +20,27 @@
     <br>
 
     <div class="form-field">
-      <label for="name">Name</label>
       <input id="name" type="text" name="name" placeholder="Name">
     </div>
 
     <div class="form-field">
-      <label for="surname">Surname</label>
       <input id="surname" type="text" name="surname" placeholder="Surname">
     </div>
 
     <div class="form-field">
-      <label for="age">Age</label>
-      <input id="age" type="number" name="age">
+      <input id="age" type="number" name="age" placeholder="Age">
     </div>
 
     <div class="form-field">
-      <label for="location">Location</label>
-      <input id="location" type="text" name="location" placeholder="Location">
+      <input id="location" type="text" name="location" placeholder="City">
     </div>
 
-    <div class="form-field">
-      <label for="user-photo">Photo</label>
+    {{!-- <div class="form-field">
       <input type="file" name="userPhoto" id="user-photo">
-    </div>
+    </div> --}}
 
     <div class="form-field">
-      <label for="bio">Give us some info about you</label>
+      <label class="comment" for="bio">Give us some info about you:</label>
       <textarea for="bio" cols="30" rows="4" name="bio"
         placeholder="Tell us about your interests, who are you... The more you tell us, the more our BBQ mates will know!"></textarea>
     </div>

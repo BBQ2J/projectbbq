@@ -13,8 +13,8 @@ router.get("/:username/editProfile", access.checkLogin, (req, res, next) => {
 
 router.post("/:username/editProfile", [access.checkLogin, upload.single("userPhoto")], (req, res, next) => {
   const { name, surname, username, bio, location, age, userPhoto } = req.body;
-  const { url } = req.file || '' ;
-console.log(req.body.userPhoto)
+  let { url } = req.file || "" ;
+console.log(req.body.userPhoto, req.file, req.user.photo)
   User.findOneAndUpdate(
     { _id: req.user._id },
     { name, surname, username, bio, location, age, userPhoto, photo: url },
