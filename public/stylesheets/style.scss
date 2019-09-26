@@ -35,38 +35,11 @@ h1 {
   margin-top: 20px;
 }
 
-.button {
-  opacity: 0.8;
-  color: #fff;
-  background: #ed3330;
-  font-size: 20px;
-  padding: 30px;
-  border-radius: 10px;
-  display: inline-block;
-  transition: all 0.4s ease 0s;
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 30px;
-}
-
-.button:hover {
-  background: #434343;
-  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  transition: all 0.4s ease 0s;
-  }
-
-a {
-  text-decoration: none;
-  // color:white;
-}
-
 .login-box {
-  display: grid;
-  align-items: center;
   font-family: 'Montserrat', sans-serif;
   opacity: 0.7;
   padding: 10px;
+  margin: 0 auto;
   max-width: 480px;
   text-align: center;
   letter-spacing: 2px;
@@ -182,6 +155,31 @@ a {
   transition: all .3s ease;
 }
 
+.buttonhome {
+  margin-top: 20px;
+  color: #fff;
+  background: #ed3330;
+  font-size: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.buttonhome:hover {
+  background: #434343;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  }
+
+.buttonhome a {
+  text-decoration: none;
+  color:white;
+}
+
 .signup {
   width: auto;
   height: 100vh;
@@ -189,4 +187,32 @@ a {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   padding-top: 200px;
+}
+
+
+.container {
+  width: 50%;
+  max-width: 800px;
+}
+
+#map {
+  height: 50vh;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#locationList .card {
+  padding: 10px;
+}
+
+#toast-container {
+  top: 50%;
+  bottom: unset;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
 }

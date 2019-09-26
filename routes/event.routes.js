@@ -3,6 +3,7 @@ const upload = require("../config/cloudinary.config");
 const access = require("../middlewares/access.mid");
 const Event = require("../models/Event");
 const Comment = require("../models/Comment");
+const moment = require("moment")
 
 router.get("/", access.checkLogin, (req, res, next) => {
   Event.find()
@@ -25,7 +26,7 @@ router.post(
   "/new",
   [access.checkLogin, upload.single("picName")],
   (req, res, next) => {
-    let { title, content } = req.body;
+    let { title, date, content, address, locality, city, postalcode, state } = req.body;
 
     if (!content || !title) {
       res.redirect("/events/new?error=empty-fields");
@@ -35,6 +36,12 @@ router.post(
     let { url } = req.file || "";
     Event.create({
       title,
+      date,
+      address,
+      locality,
+      city,
+      postalcode,
+      state,
       content,
       picPath: url,
       creatorId: req.user._id
@@ -53,8 +60,10 @@ router.get("/:id", access.checkLogin, (req, res, next) => {
   Event.findById(req.params.id)
     .populate("creatorId")
     .populate({ path: "comments", populate: { path: "authorId" } })
+    .lean()
     .then(event => {
       event.Owner = false;
+      event.date = moment(event.date).format("DD/MM/YYYY")
     
       if (event.creatorId._id.toString() === req.session.passport.user.toString()) {
         event.Owner = true;
@@ -68,16 +77,18 @@ router.get("/:id", access.checkLogin, (req, res, next) => {
 router.get("/:id/edit", access.checkLogin, (req, res, next) =>  {
   Event.findById(req.params.id)
   .then(event => {
+    event.date = moment(event.date).format("DD/MM/YYYY, h:mm a")
     res.render("events/event-edit", {event});
   })
 })
 
 router.post("/:id/edit", [access.checkLogin, upload.single("picPath")], (req, res, next) => {
   const { id } = req.params;
-  const { title, content, date, location } = req.body;
-  const { url } = req.file || "";
-  console.log(id, title, content, url)
-  Event.findByIdAndUpdate(id, { title, content, date, location, picPath: url }, { new: true })
+  const { title, content, date, address, locality, city, postalcode, state } = req.body;
+  const url = !!req.file? req.file.url : req.body.photo; 
+   
+ 
+  Event.findByIdAndUpdate(id, { title, content, address, locality, city, postalcode, state, date, picPath: url }, { new: true })
     .then(updatedEvent => {
       console.log(updatedEvent)
       res.redirect(`/events/${id}`);

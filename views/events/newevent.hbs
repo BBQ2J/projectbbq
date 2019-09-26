@@ -1,12 +1,63 @@
-<form action="/events/new" method="POST" enctype="multipart/form-data">
-  <label for="title">Title</label>
-  <input type="text" name="title" id="title">
-  <label for="content">Content</label>
-  <input type="text" name="content" id="content">
-  <input type="file" name="picName" id="picName">
-  <button>Create</button>
-</form>
+<div class="container">
+  <h3>Shipping Address</h3>
+  <p>You can click the button below to use your current location as your shipping address</p>
+  <div id="map">
+  </div>
+  <button id="showMe" class="btn">Use My Location</button>
+  <div id="locationList"></div>
+  <br>
 
-{{#if message}}
+  <form action="/events/new" method="POST" enctype="multipart/form-data">
+    <label for="title">Name of your event: </label>
+    <input type="text" name="title" id="title">
+    <label for="date">Date: </label>
+    <input type="date" name="date" min="2019-09-27">
+    <label for="content">Give a description of your event</label>
+    <input type="text" name="content" id="content">
+    <input type="file" name="picName" id="picName">
+
+    <div class="input-field">
+
+      <label class="active" for="address">Address (Area and Street)</label>
+      <textarea class="input_fields materialize-textarea" name="address" id="address" type="text"></textarea>
+
+    </div>
+
+    <div class="input-field">
+
+      <label class="active" for="locality">Locality</label>
+      <input class="input_fields" name="locality" id="locality" type="text">
+
+    </div>
+
+    <div class="input-field">
+
+      <label class="active" for="city">City/District/Town</label>
+      <input class="input_fields" name="city" id="city" type="text">
+
+    </div>
+
+    <div class="input-field">
+
+      <label class="active" for="pin_code">Pin Code</label>
+      <input class="input_fields" name="postalcode" id="postal_code" type="text">
+
+    </div>
+
+    <div class="input-field">
+
+      <label class="active" for="State">State</label>
+      <input class="input_fields" name="state" id="state" type="text">
+
+    </div>
+</div>
+    <button>Create</button>
+  </form>
+
+  {{#if message}}
   <p class="error-message">{{message}}</p>
-{{/if}}
+  {{/if}}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>

@@ -5,7 +5,12 @@ const eventSchema = new Schema(
   {
     title: String,
     content: String,
-    date: { type: Date, min: Date.now },
+    address: String,
+    locality: String,
+    city: String,
+    postalcode: Number,
+    state: String,
+    date: Date,
     location: String,
     creatorId: { type : Schema.Types.ObjectId, ref: 'User' },
     picPath: {
