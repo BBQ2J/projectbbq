@@ -6,7 +6,7 @@
   background-color: rgba(176, 213, 243, 0.918)
 }
 
-.signup {
+.login {
   background-color: rgba(100, 171, 230, 0.918);
   border-radius: 5px;
   border: 1px solid black;
@@ -19,20 +19,19 @@
   margin: auto 0;
 }
 
-.signup h2,
-.signup p {
+.login h2, .login p {
   font-size: 40px;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.signup p {
+.login p {
   font-size: 15px;
   font-style: italic;
   letter-spacing: 2px;
 }
 
-.signup label {
+.login label {
   font-size: 15px;
 }
 
@@ -41,7 +40,8 @@
   font-size: 30px;
 }
 
-.signup input, .signup textarea {
+.login input, .login
+textarea {
   background: white;
   width: 100%;
   border-radius: 6px;
@@ -50,22 +50,22 @@
   border: #2980b9 4px solid;
 }
 
-.signup input::placeholder {
+.login input::placeholder {
   top: 5px;
   font-size: 20px;
 }
 
-.signup .error-message {
+.login .error-message {
   color: red;
   text-align: center;
   font-size: 15px;
 }
 
-.signup .comment {
+.login .comment {
   font-style: italic;
 }
 
-// .signup button {
+// .login button {
 //     background-color: #4CAF50; /* Green */
 //     border: none;
 //     color: white;
@@ -76,10 +76,10 @@
 //     font-size: 16px;
 // }
 
-.signup button {
+.login button {
   background: #ae273d;
   position: relative;
-  left: 140px;
+  left: 60px;
   width: 200px;
   height:40px;
   padding-top: 5px;
@@ -94,6 +94,6 @@
   letter-spacing: 1px;
 }
 
-.signup button:hover {
+.login button:hover {
   background: #2cc06b;
 }

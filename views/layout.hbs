@@ -17,10 +17,12 @@
       <div class="menu">
         <ul>
           {{#if user}}
-          <li> <a href="/events">Events</a></li>
-          <li> <a href="/events/new">Create Event</a></li>
-          <li> <a href="/profile/{{user.username}}">Your Profile</a></li>
           <li> <a href="/auth/logout">Logout</a></li>
+          <li> <a href="/profile/{{user.username}}">Your Profile</a></li>
+          <li> <a href="/events/new">Create Event</a></li>
+          <li> <a href="/events">Events</a></li>
+
+
           {{else}}
           <li> <a href="/auth/signup">Signup</a></li>
           <li> <a href="/auth/login">Login</a></li>
