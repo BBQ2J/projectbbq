@@ -6,18 +6,42 @@
     <input id="title" type="text" name="title" value="{{event.title}}">
   </div>
   <div class="form-field">
-    <label for="content">Describe a bit what you want to do: </label>
+    <label for="date">Date: </label>
+    <input type="date" name="date" min="2019-09-27">
+  </div>
+  <div class="form-field">
+    <label for="content">Description: </label>
     <input id="content" type="text" name="content" value="{{event.content}}">
   </div>
   <div class="form-field">
-    <label for="location">Where is it gonna be?: </label>
-    <input id="location" type="text" name="location" value="{{event.location}}">
+    <label for="address">Address: </label>
+    <input id="address" type="text" name="address" value="{{event.address}}">
   </div>
+  <div class="form-field">
+    <label for="locality">Locality: </label>
+    <input id="locality" type="text" name="locality" value="{{event.locality}}">
+  </div>
+  <div class="form-field">
+    <label for="city">City: </label>
+    <input id="city" type="text" name="city" value="{{event.city}}">
+  </div>
+
+  <div class="form-field">
+    <label for="postalcode">Postal code: </label>
+    <input id="postalcode" type="text" name="postalcode" value="{{event.postalcode}}">
+  </div>
+
+  <div class="form-field">
+    <label for="state">State: </label>
+    <input id="state" type="text" name="state" value="{{event.state}}">
+  </div>
+
   <div>
     <label for="picPath">Change the picture for the event: </label>
     <img src="{{event.picPath}}" alt="Event Photo">
-    <input type="file" name="picPath" id="picPath">
+    <input type="file" name="picPath" id="picPath" >
   </div>
+  <input type="hidden" name="photo" value="{{event.picPath}}">
   <input type="submit" value="Accept Changes">
 </form>
 </div>

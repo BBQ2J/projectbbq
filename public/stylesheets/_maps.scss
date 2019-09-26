@@ -1,0 +1,26 @@
+.container {
+  width: 50%;
+  max-width: 800px;
+}
+
+#map {
+  height: 50vh;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#locationList .card {
+  padding: 10px;
+}
+
+#toast-container {
+  top: 50%;
+  bottom: unset;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
