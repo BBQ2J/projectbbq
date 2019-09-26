@@ -1,6 +1,7 @@
 .flex {
   display: flex;
   justify-content: center;
+  margin-top: 52px;
   width: 100%;
   height: 100vh;
   background-color: rgba(176, 213, 243, 0.918)
@@ -14,6 +15,7 @@
   display: grid;
   padding: 40px 0;
   width: 650px;
+  height: 700px;
   justify-content: center;
   align-items: center;
   margin: auto 0;
@@ -78,8 +80,6 @@
 
 .signup button {
   background: #ae273d;
-  position: relative;
-  left: 140px;
   width: 200px;
   height:40px;
   padding-top: 5px;
