@@ -3,15 +3,15 @@
 <div class="event">
 <h2 class="event-title">{{this.title}}</h2>
 <p>Created by: {{this.creatorId.username}}</p>
-<p>Date :{{this.date}}</p>
-<p>Description :{{this.content}}</p>
-<p>Address: {{this.address}}</p>
-<p>Locality: {{this.locality}}</p>
-<p>City: {{this.city}}</p>
-<p>Postal code: {{this.postalcode}}</p>
-<p>State:  {{this.state}}</p>
-<img src="{{this.picPath}}" alt="Event Photo">
-<p>Comments: {{this.comments.length}}</p>
+<p class="date">Date: {{this.date}}</p>
+<p class="address">Address: {{this.address}}</p>
+<p class="locality">Locality: {{this.locality}}</p>
+<p class="city">City: {{this.city}}</p>
+<p class="postalcode">Postal code: {{this.postalcode}}</p>
+<p class="state">State:  {{this.state}}</p>
+<img class="event-image" src="{{this.picPath}}" alt="Event Photo">
+<p class="bio">Description: {{this.content}}</p>
+<p class="comments">Comments: {{this.comments.length}}</p>
 </div>
 
  {{/with}}

@@ -1,31 +1,36 @@
 <div class="event-detail">
-<p><a href="/events">< Go Back</a></p>
-
-{{>eventPartial event=event}}
-
+  <p><a href="/events">
+      < Go Back</a> </p> <div class="eventPartial">
+        {{>eventPartial event=event}}
+</div>
 {{#if event.Owner}}
 <p><a href="/events/{{event._id}}/edit">Edit this event</a></p>
 <p><a href="/events/{{event._id}}/delete">Delete this event</a></p>
 {{/if}}
 
 {{#each event.comments}}
-  <div class="comment">
-    <p>Author: {{this.authorId.username}}</p>
-    <p>Content: {{this.content}}</p>
+<div class="comment">
+  <div class="avatar-name">
+  <p> <img class="avatar2" src="{{this.authorId.photo}}" alt="{{this.authorId.username}} avatar"> {{this.authorId.username}} commented:</p>
   </div>
-  {{#is ../user.username this.authorId.username}}  
-    <form action="/events/{{this._id}}/deleteComment" method="POST">
-    {{!-- <p><a href="/events/{{this._id}}/deleteComment"></a></p> --}}
-    <button type="submit">Delete</button>
-    </form>
-  {{/is}}
-{{/each}}
-  
-<form action="/events/{{event.id}}/newComment" method="POST">
-  <textarea for="content" cols="30" rows="10" name="content">Content</textarea>
-  <input type="file" name="picName" id="picName">
-  <button>Create comment</button>
+  <div class="commented">
+      <p>{{this.content}}</p>
+  </div>
+
+</div>
+{{#is ../user.username this.authorId.username}}
+<form action="/events/{{this._id}}/deleteComment" method="POST">
+  {{!-- <p><a href="/events/{{this._id}}/deleteComment"></a></p> --}}
+  <button class="delete" type="submit">Delete</button>
 </form>
+{{/is}}
+{{/each}}
+<div class="comment-form">
+  <form action="/events/{{event._id}}/newComment" method="POST">
+    <textarea for="content" cols="30" rows="8" name="content" placeholder="Say something about this..."></textarea>
+    <button>Create comment</button>
+  </form>
+</div>
 
 <div class="error-message"></div>
 
