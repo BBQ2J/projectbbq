@@ -1,41 +1,45 @@
-
 <div class="editProfile">
-<h2 class="event-title">Your profile</h2>
-<form action="/profile/{{user.username}}/editProfile" method="POST" enctype="multipart/form-data">
-<div class="form-field">
-    <label for="username">Your username:</label>
-    <input id="username" type="text" name="username" value="{{user.username}}">
+  <div class="editProfile-text">
+    <h2>Your profile</h2>
+    <form action="/profile/{{user.username}}/editProfile" method="POST" enctype="multipart/form-data">
+      <div class="form-field">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" value="{{user.username}}">
+      </div>
+      <div class="form-field">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" value="{{user.name}}">
+      </div>
+      <div class="form-field">
+        <label for="surname">Surname:</label>
+        <input id="surname" type="text" name="surname" value="{{user.surname}}">
+      </div>
+      <div class="form-field">
+        <label for="age">Age:</label>
+        <input id="age" type="number" name="age" value="{{user.age}}">
+      </div>
+      <div class="form-field">
+        <label for="location">Location:</label>
+        <input id="location" type="text" name="location" value="{{user.location}}">
+      </div>
+      <div class="form-field">
+        <label for="bio">Bio:</label>
+        <textarea for="bio" cols="30" rows="3" name="bio">{{user.bio}}</textarea>
+      </div>
+      <div class="form-field">
+        <label for="user-photo">My profile picture:</label>
+
+          <br>
+
+        <img src="{{user.photo}}" alt="{{user.username}} photo">
+
+        <br>
+        <input type="file" name="userPhoto" id="user-photo">
+      </div>
+      <input type="hidden" name="photo" value="{{user.photo}}">
+
+      <input class="editprofilebtn btn-1" type="submit" value="Save your changes">
+
+    </form>
   </div>
- <div class="form-field">
-    <label for="name">Your name:</label>
-    <input id="name" type="text" name="name" value="{{user.name}}">
-    </div> 
-<div class="form-field">
-    <label for="surname">Your surname:</label>
-    <input id="surname" type="text" name="surname" value="{{user.surname}}">
 </div>
-<div class="form-field">
-    <label for="age">Your age:</label>
-    <input id="age" type="number" name="age" value="{{user.age}}">
-</div>
-<div class="form-field">
-    <label for="location">Your location:</label>
-    <input id="location" type="text" name="location" value="{{user.location}}">
-  </div>
-<div class="form-field">
-    <label for="bio">Your bio:</label>
-    <textarea for="bio" cols="30" rows="4" name="bio">{{user.bio}}</textarea>
-  </div>
-  <div class="form-field">
-    <label for="user-photo">My profile picture:</label>
-    <img src="{{user.photo}}" alt="{{user.username}} photo">
-    <input type="file" name="userPhoto" id="user-photo">
-  </div> 
-  <input type="hidden" name="photo" value="{{user.photo}}">
-
-  <input type="submit" value="Edit">
-
-  </form>
-  </div>
-
-

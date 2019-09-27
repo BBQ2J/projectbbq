@@ -1,0 +1,98 @@
+.container2 {
+  display:flex;
+  height: 200vh;
+  width: 100%;
+	margin-top: 52px;
+  justify-content: center;
+	text-align: center;
+  background-color: #9bbede;
+  background-repeat: repeat;
+}
+
+.container2 .newevent-center h3{
+  margin-top: 70px;
+  font-size: 80px;
+  font-family: "Lato";
+ }
+
+ .container2 .newevent-center p {
+   padding: 70px;
+   font-size: 25px;
+   font-family: "Arvo", serif;
+ }
+
+.input-field {
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Arvo", serif;
+  padding: 5px;
+}
+
+.input-field:hover {
+  background-color: #dee7ecb7;
+}
+
+.createbtn { 
+  text-decoration-line: underline;
+  border: none;
+	font-family: 'Lato';
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	// position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.createbtn:after {
+	position: absolute;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.createbtn:before {
+  font-family: 'Lato', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.btn-1 {
+	background: #3498db;
+	color: #fff;
+}
+
+.btn-1:hover {
+	background: #2980b9;
+}
+
+.btn-1:active {
+	background: #2980b9;
+	top: 2px;
+}
+
+.btn-1:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
