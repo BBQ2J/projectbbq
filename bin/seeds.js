@@ -33,7 +33,7 @@ let users = [
     active: true
   },
   {
-    name: "Lucrecio",
+    name: "Luca",
     surname: "Manfredi",
     username: "luca",
     password: bcrypt.hashSync("luca", bcrypt.genSaltSync(bcryptSalt)),

@@ -11,13 +11,12 @@
 
 #locationList .card {
   padding: 10px;
+  font-family: 'Lato';
 }
 
-#toast-container {
-  top: 50%;
-  bottom: unset;
+#locationList .card:hover{
+  background-color: #dee7ecb7;
 }
-
 
 @media only screen and (max-width: 768px) {
   .container {
