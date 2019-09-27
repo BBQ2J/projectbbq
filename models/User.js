@@ -10,17 +10,17 @@ const userSchema = new Schema(
   {
     username: { type: String, unique: true},
     password: {
-      type: String
-      // required: true
-      // match: [PASSWORD_PATTERN, "this is not a correct password"]
+      type: String,
+      required: true,
+      match: [PASSWORD_PATTERN, "this is not a correct password"]
     },
     email: {
       type: String,
-      // unique: true,
+      unique: true,
       required: true,
       lowercase: true,
-      trim: true
-      // match: [EMAIL_PATTERN, "this is not a correct email"]
+      trim: true,
+      match: [EMAIL_PATTERN, "this is not a correct email"]
     },
     name: String,
     surname: String,
