@@ -1,3 +1,4 @@
+<div class="edit-background">
 <div class="event-edit">
 <h2 class="event-title">Wanna make some changes?</h2>
 <form action="/events/{{event._id}}/edit" method="POST" enctype="multipart/form-data">
@@ -36,12 +37,12 @@
     <input id="state" type="text" name="state" value="{{event.state}}">
   </div>
 
-  <div>
-    <label for="picPath">Change the picture for the event: </label>
+  <div class="picEvent">
     <img src="{{event.picPath}}" alt="Event Photo">
     <input type="file" name="picPath" id="picPath" >
   </div>
   <input type="hidden" name="photo" value="{{event.picPath}}">
-  <input type="submit" value="Accept Changes">
+  <input class="button3" type="submit" value="Accept Changes">
 </form>
+</div>
 </div>
