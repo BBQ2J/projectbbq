@@ -1,7 +1,8 @@
+require('dotenv').config();
 const mongoose     = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost/EmbersPals', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+  .connect(`${process.env.DB_GLOBAL}`, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
