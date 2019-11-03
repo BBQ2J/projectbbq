@@ -70,7 +70,6 @@ router.get("/:id", access.checkLogin, (req, res, next) => {
         event.Owner = true;
       }
       
-
       res.render("events/event-detail", {event, user});
     });
 });

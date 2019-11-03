@@ -79,13 +79,14 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
     });
     console.log(newUser);
     newUser.save().then(newUser => {
-      console.log("xxx")
       transporter
         .sendMail({
           from: "info@info.com",
           to: email,
           subject: `${username} welcome! :)`,
-          html: `<a href="http://localhost:3000/auth/confirm/${validationCode}">Click here to activate your account</a>`
+          // html: `<a href="mongodb://localhost/EmbersPals/auth/confirm/${validationCode}">Click here to activate your account</a>`
+          html: `<a href="${process.env.DB_GLOBAL}/auth/confirm/${validationCode}">Click here to activate your account</a>`
+
         })
         .then(() => res.redirect("/"))
         .catch(err => {
