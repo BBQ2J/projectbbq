@@ -85,7 +85,8 @@ router.post("/signup", upload.single("userPhoto"), (req, res, next) => {
           to: email,
           subject: `${username} welcome! :)`,
           // html: `<a href="mongodb://localhost/EmbersPals/auth/confirm/${validationCode}">Click here to activate your account</a>`
-          html: `<a href="${process.env.DB_GLOBAL}/auth/confirm/${validationCode}">Click here to activate your account</a>`
+          html: `<a href="mongodb+srv://emberspals:lCXneY50pEbfTF5R@cluster0-8ecr6.mongodb.net/embers-global?retryWrites=true&w=majority/auth/confirm/${validationCode}">Click here to activate your account</a>`
+          // html: `<a href="${process.env.DB_GLOBAL}/auth/confirm/${validationCode}">Click here to activate your account</a>`
 
         })
         .then(() => res.redirect("/"))
